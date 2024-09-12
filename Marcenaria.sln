@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marcenaria01", "Marcenaria01\Marcenaria01.csproj", "{10F52A08-02D0-4CE5-931E-D38DCF1DB6E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{CD864CB7-6531-45F0-9502-28C2BFF52F5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10F52A08-02D0-4CE5-931E-D38DCF1DB6E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10F52A08-02D0-4CE5-931E-D38DCF1DB6E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10F52A08-02D0-4CE5-931E-D38DCF1DB6E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10F52A08-02D0-4CE5-931E-D38DCF1DB6E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD864CB7-6531-45F0-9502-28C2BFF52F5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD864CB7-6531-45F0-9502-28C2BFF52F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD864CB7-6531-45F0-9502-28C2BFF52F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD864CB7-6531-45F0-9502-28C2BFF52F5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37922C01-3804-46CD-9E59-D5BB91A221EC}
+	EndGlobalSection
+EndGlobal

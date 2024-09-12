@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Perfil 1": {
+      "commandName": "Executable",
+      "executablePath": "\\\\server\\ALUNOS DEV\\vinicius.ribeiro\\Vinicius turno tarde\\Modulo 2 Paulo\\Marcenaria\\API\\API.csproj",
+      "workingDirectory": "C:\\Users\\Alunos\\Desktop\\vini"
+    }
+  }
+}
