@@ -18,7 +18,8 @@ namespace Marcenaria01
 
             CreateMap<CreateProdutosDTO, Produtos>().ReverseMap();
             CreateMap<CreateFornecedorDTO, Fornecedor>().ReverseMap();
-            CreateMap<CreateClienteDTO, Cliente>().ReverseMap();  
+            CreateMap<CreateClienteDTO, Cliente>().ReverseMap();
+            CreateMap<CreateCompraDTO, Compra>().ReverseMap();
         }
     }
 }

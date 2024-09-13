@@ -3,42 +3,51 @@ using AutoMapper;
 using Marcenaria._01_Services;
 using Marcenaria._03_Entidades;
 using Marcenaria01._01_Services;
+using Marcenaria01._02_Repository;
+using Marcenaria01._03_Entidades.DTO.Produto;
+using Marcenaria01._03_Entidades;
 using Microsoft.AspNetCore.Mvc;
+using Marcenaria._02_Repository;
 
 namespace API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class Fornecedorcontroller : ControllerBase
+    public class Fornecedorcontroller : Controller
     {
-        private readonly FornecedorService _service;
+        private readonly FornecedorRepository _repository;
         private readonly IMapper _mapper;
         public Fornecedorcontroller(IConfiguration config, IMapper mapper)
         {
             string _config = config.GetConnectionString("DefaultConnection");
-            _service = new FornecedorService(_config);
+            _repository = new FornecedorRepository(_config);
             _mapper = mapper;
         }
         [HttpPost("adicionar-Fornecedor")]
-        public void AdicionarFornecedor(CreateFornecedorDTO fornecedorDTO)
+        public void Adicionar(CreateFornecedorDTO fornecedorDTO)
         {
-            Fornecedor produto = _mapper.Map<Fornecedor>(fornecedorDTO);
-            _service.Adicionar(produto);
+            Fornecedor fornecedor = _mapper.Map<Fornecedor>(fornecedorDTO);
+            _repository.Adicionar(fornecedor);
         }
         [HttpGet("listar-Fornecedor")]
-        public List<Fornecedor> ListarFornecedor()
+        public List<Fornecedor> Listar()
         {
-            return _service.Listar();
+            return _repository.Listar();
         }
         [HttpPut("editar-Fornecedor")]
-        public void EditarFornecedor(Fornecedor f)
+        public void Editar(Fornecedor f)
         {
-            _service.Editar(f);
+            _repository.Editar(f);
         }
         [HttpDelete("deletar-Fornecedor")]
-        public void DeletarFornecedor(int id)
+        public void Deletar(int id)
         {
-            _service.Remover(id);
+            _repository.Remover(id);
+        }
+        [HttpGet("Buscar-Fornecedor-por-Id")]
+        public Fornecedor BuscarPorId(int id)
+        {
+            return _repository.BuscarPorId(id);
         }
     }
     

@@ -1,5 +1,4 @@
-﻿using Marcenaria._03_Entidades;
-using Marcenaria01._02_Repository;
+﻿using Marcenaria01._02_Repository;
 using Marcenaria01._03_Entidades;
 using System;
 using System.Collections.Generic;
@@ -9,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace Marcenaria01._01_Services
 {
-    public class ClienteService
+    public class CompraService
     {
-        public ClienteRepository repository { get; set; }
-        public ClienteService(string _config)
+        public CompraRepository repository { get; set; }
+        public CompraService(string _config)
         {
-            repository = new ClienteRepository(_config);
+            repository = new CompraRepository(_config);
         }
-        public void Adicionar(Cliente clientes)
+        public void Adicionar(Compra compra)
         {
-            repository.Adicionar(clientes);
+            repository.Adicionar(compra);
         }
 
         public void Remover(int id)
@@ -26,7 +25,7 @@ namespace Marcenaria01._01_Services
             repository.Remover(id);
         }
 
-        public List<Cliente> Listar()
+        public List<Compra> Listar()
         {
             return repository.Listar();
         }
@@ -34,10 +33,9 @@ namespace Marcenaria01._01_Services
         {
             //return repository.BuscarPorId(id);
         }
-        public void Editar(Cliente editClientes)
+        public void Editar(Compra editCompras)
         {
-            repository.Editar(editClientes);
+            repository.Editar(editCompras);
         }
-       
     }
 }

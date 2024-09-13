@@ -12,34 +12,39 @@ namespace CRUDDRAPER.Controllers
     [Route("[controller]")]
     public class Produtocontroller : ControllerBase
     {
-        private readonly ProdutoService _service;
+        private readonly ProdutoRepository _repository;
         private readonly IMapper _mapper;
         public Produtocontroller(IConfiguration config, IMapper mapper)
         {
             string _config = config.GetConnectionString("DefaultConnection");
-            _service = new ProdutoService(_config);
+            _repository = new ProdutoRepository(_config);
             _mapper = mapper;
         }
         [HttpPost("adicionar-Produto")]
-        public void AdicionarProduto(CreateProdutosDTO produtoDTO)
+        public void Adicionar(CreateProdutosDTO produtoDTO)
         {
             Produtos produto = _mapper.Map<Produtos>(produtoDTO);
-            _service.Adicionar(produto);
+            _repository.Adicionar(produto);
         }
         [HttpGet("listar-produto")]
-        public List<Produtos> ListarProduto()
+        public List<Produtos> Listar()
         {
-            return _service.Listar();
+            return _repository.Listar();
         }
         [HttpPut("editar-Produto")]
-        public void EditarProduto(Produtos p)
+        public void Editar(Produtos p)
         {
-            _service.Editar(p);
+            _repository.Editar(p);
         }
         [HttpDelete("deletar-Produto")]
-        public void DeletarProduto(int id)
+        public void Deletar(int id)
         {
-            _service.Remover(id);
+            _repository.Remover(id);
+        }
+        [HttpGet("Buscar-Produto-por-Id")]
+        public Produtos BuscarPorId(int id)
+        {
+            return _repository.BuscarPorId(id);
         }
     }
 }

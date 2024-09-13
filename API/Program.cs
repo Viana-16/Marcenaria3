@@ -10,6 +10,7 @@ builder.Services.AddSwaggerGen();
 InicializadorBd.Inicializar();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

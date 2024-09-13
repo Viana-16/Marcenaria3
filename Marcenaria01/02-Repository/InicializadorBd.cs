@@ -40,11 +40,21 @@ namespace Marcenaria._02_Repository
             );";
 
                 commandoSQL += @" 
-                CREATE TABLE IF NOT EXISTS Cliente(                
+                CREATE TABLE IF NOT EXISTS Clientes(                
                 ID INTEGER PRIMARY KEY AUTOINCREMENT,
                 NOME TEXT NOT NULL,
                 CONTATO INTEGER NOT NULL,
-                ENDERECO TEXT NOT NULL,
+                ENDERECO TEXT NOT NULL
+                
+          
+            );";
+                commandoSQL += @" 
+                CREATE TABLE IF NOT EXISTS Compras(                
+                ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                DATACOMPRA INTEGER NOT NULL,
+                FORNECEDORID INTEGER NOT NULL,
+                ITENSCOMPRADOS TEXT NOT NULL,
+                TOTAL INTEGER NOT NULL
                 
           
             );";

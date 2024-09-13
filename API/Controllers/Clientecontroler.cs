@@ -2,6 +2,7 @@
 using AutoMapper;
 using Marcenaria._03_Entidades;
 using Marcenaria01._01_Services;
+using Marcenaria01._02_Repository;
 using Marcenaria01._03_Entidades;
 using Marcenaria01._03_Entidades.DTO.Produto;
 using Microsoft.AspNetCore.Mvc;
@@ -13,34 +14,39 @@ namespace API.Controllers
     [Route("[controller]")]
     public class Clientecontroller : Controller
     {
-        private readonly ClienteService _service;
+        private readonly ClienteRepository _repository;
         private readonly IMapper _mapper;
         public Clientecontroller(IConfiguration config, IMapper mapper)
         {
             string _config = config.GetConnectionString("DefaultConnection");
-            _service = new ClienteService(_config);
+            _repository = new ClienteRepository(_config);
             _mapper = mapper;
         }
         [HttpPost("adicionar-Clientes")]
-        public void AdicionarCliente(CreateClienteDTO clienteDTO)
+        public void Adicionar(CreateClienteDTO clienteDTO)
         {
             Cliente clientes = _mapper.Map<Cliente>(clienteDTO);
-            _service.Adicionar(clientes);
+            _repository.Adicionar(clientes);
         }
         [HttpGet("listar-Clientes")]
-        public List<Cliente> ListarCliente()
+        public List<Cliente> Listar()
         {
-            return _service.Listar();
+            return _repository.Listar();
         }
         [HttpPut("editar-Clientes")]
-        public void EditarCliente(Cliente c)
+        public void Editar(Cliente c)
         {
-            _service.Editar(c);
+            _repository.Editar(c);
         }
         [HttpDelete("deletar-Clientes")]
-        public void DeletarCliente(int id)
+        public void Deletar(int id)
         {
-            _service.Remover(id);
+            _repository.Remover(id);
+        }
+        [HttpGet("Buscar-Cliente-por-Id")]
+        public Cliente BuscarPorId(int id)
+        {
+            return _repository.BuscarPorId(id);
         }
     }
 }
