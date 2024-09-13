@@ -58,6 +58,16 @@ namespace Marcenaria._02_Repository
                 
           
             );";
+                commandoSQL += @" 
+                CREATE TABLE IF NOT EXISTS Funcionarios(                
+                ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                NOME TEXT NOT NULL,
+                CARGO TEXT NOT NULL,
+                CONTATO INTEGER NOT NULL,
+                DATACONTRATACAO INTEGER NOT NULL
+                
+          
+            );";
 
                 connection.Execute(commandoSQL);
 

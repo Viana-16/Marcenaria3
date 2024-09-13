@@ -9,38 +9,39 @@ using System.Threading.Tasks;
 
 namespace Marcenaria01._02_Repository
 {
-    public class ClienteRepository
+    public class FuncionarioRepository
     {
         private readonly string ConnectionString;
-        public ClienteRepository(string connectioString)
+        public FuncionarioRepository(string connectioString)
         {
             ConnectionString = connectioString;
         }
-        public void Adicionar(Cliente clientes)
+        public void Adicionar(Funcionario funcionario)
         {
             using var connection = new SQLiteConnection(ConnectionString);
-            connection.Insert<Cliente>(clientes);
+            connection.Insert<Funcionario>(funcionario);
         }
         public void Remover(int id)
         {
             using var connection = new SQLiteConnection(ConnectionString);
-            Cliente clientes = BuscarPorId(id);
-            connection.Delete<Cliente>(clientes);
+            Funcionario funcionario = BuscarPorId(id);
+            connection.Delete<Funcionario>(funcionario);
         }
-        public void Editar(Cliente clientes)
+        public void Editar(Funcionario funcionario)
         {
             using var connection = new SQLiteConnection(ConnectionString);
-            connection.Update<Cliente>(clientes);
+            connection.Update<Funcionario>(funcionario);
         }
-        public List<Cliente> Listar()
+        public List<Funcionario> Listar()
         {
             using var connection = new SQLiteConnection(ConnectionString);
-            return connection.GetAll<Cliente>().ToList();
+            return connection.GetAll<Funcionario>().ToList();
         }
-        public Cliente BuscarPorId(int id)
+        public Funcionario BuscarPorId(int id)
         {
             using var connection = new SQLiteConnection(ConnectionString);
-            return connection.Get<Cliente>(id);
+            return connection.Get<Funcionario>(id);
         }
     }
 }
+
