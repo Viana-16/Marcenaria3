@@ -13,7 +13,7 @@ namespace API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class Fornecedorcontroller : Controller
+    public class Fornecedorcontroller : ControllerBase
     {
         private readonly FornecedorRepository _repository;
         private readonly IMapper _mapper;

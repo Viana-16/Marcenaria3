@@ -12,7 +12,7 @@ namespace API.Controllers
 
     [ApiController]
     [Route("[controller]")]
-    public class Clientecontroller : Controller
+    public class Clientecontroller : ControllerBase
     {
         private readonly ClienteRepository _repository;
         private readonly IMapper _mapper;
