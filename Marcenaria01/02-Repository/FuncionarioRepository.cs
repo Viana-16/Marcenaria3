@@ -33,7 +33,7 @@ namespace Marcenaria._02_Repository
             using var connection = new SQLiteConnection(ConnectionString);
             connection.Update<Funcionario>(funcionario); 
         }
-        public List<Funcionario> Listar()
+        public List<Funcionario> Listar()  
         {
             using var connection = new SQLiteConnection(ConnectionString);
             return connection.GetAll<Funcionario>().ToList();
