@@ -1,4 +1,6 @@
-﻿using Marcenaria01._02_Repository;
+﻿using Marcenaria._02_Repository;
+using Marcenaria._03_Entidades;
+using Marcenaria01._02_Repository;
 using Marcenaria01._03_Entidades;
 using System;
 using System.Collections.Generic;
@@ -6,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Marcenaria01._01_Services
+namespace Marcenaria._01_Services
 {
     public class CompraService
     {
@@ -29,13 +31,14 @@ namespace Marcenaria01._01_Services
         {
             return repository.Listar();
         }
-        public void BuscarTimePorId(int id)
+        public void BuscarPorId(int id)
         {
             //return repository.BuscarPorId(id);
         }
-        public void Editar(Compra editCompras)
+        public void Editar(Compra editCompra)
         {
-            repository.Editar(editCompras);
+            repository.Editar(editCompra);
         }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Dapper.Contrib.Extensions;
+using Marcenaria._03_Entidades;
 using Marcenaria01._03_Entidades;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Marcenaria01._02_Repository
+namespace Marcenaria._02_Repository
 {
     public class CompraRepository
     {
@@ -44,3 +45,4 @@ namespace Marcenaria01._02_Repository
         }
     }
 }
+

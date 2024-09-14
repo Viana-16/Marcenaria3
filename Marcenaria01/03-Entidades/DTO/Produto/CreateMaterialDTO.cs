@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Marcenaria01._03_Entidades.DTO.Produto
 {
-    public class CreateCompraDTO
+    internal class CreateMaterialDTO
     {
-        public int DataCompra { get; set; }
-        public string ItensComprados { get; set; }
-        public int Total { get; set; }
     }
 }

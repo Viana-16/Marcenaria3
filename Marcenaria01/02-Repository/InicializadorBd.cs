@@ -52,7 +52,6 @@ namespace Marcenaria._02_Repository
                 CREATE TABLE IF NOT EXISTS Compras(                
                 ID INTEGER PRIMARY KEY AUTOINCREMENT,
                 DATACOMPRA INTEGER NOT NULL,
-                FORNECEDORID INTEGER NOT NULL,
                 ITENSCOMPRADOS TEXT NOT NULL,
                 TOTAL INTEGER NOT NULL
                 
