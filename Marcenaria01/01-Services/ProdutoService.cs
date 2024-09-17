@@ -10,32 +10,32 @@ namespace Marcenaria._01_Services
 {
     public class ProdutoService
     {
-        public ProdutoRepository repository { get; set; }
+        public ProdutoRepository _repository { get; set; }
         public ProdutoService(string _config)
         {
-            repository = new ProdutoRepository(_config);
+            _repository = new ProdutoRepository(_config);
         }
         public void Adicionar(Produtos produto)
         {
-            repository.Adicionar(produto);
+            _repository.Adicionar(produto);
         }
 
         public void Remover(int id)
         {
-            repository.Remover(id);
+           _repository.Remover(id);
         }
 
         public List<Produtos> Listar()
         {
-            return repository.Listar();
+            return _repository.Listar();
         }
-        public void BuscarPorId(int id)
+        public Produtos BuscarPorId(int id)
         {
-            //return repository.BuscarPorId(id);
+            return _repository.BuscarPorId(id);
         }
         public void Editar( Produtos editProduto)
         {
-            repository.Editar( editProduto);
+            _repository.Editar( editProduto);
         }
 
     }

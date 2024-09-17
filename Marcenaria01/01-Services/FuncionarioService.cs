@@ -12,32 +12,32 @@ namespace Marcenaria._01_Services
 {
     public class FuncionarioService
     {
-        public FuncionarioRepository repository { get; set; }
+        public FuncionarioRepository _repository { get; set; }
         public FuncionarioService(string _config)
         {
-            repository = new FuncionarioRepository(_config);
+            _repository = new FuncionarioRepository(_config);
         }
         public void Adicionar(Funcionario funcionario)
         {
-            repository.Adicionar(funcionario);
+            _repository.Adicionar(funcionario);
         }
 
         public void Remover(int id)
         {
-            repository.Remover(id);
+            _repository.Remover(id);
         }
 
         public List<Funcionario> Listar()
         {
-            return repository.Listar();
+            return _repository.Listar();
         }
-        public void BuscarPorId(int id)
+        public Funcionario BuscarPorId(int id)
         {
-            //return repository.BuscarPorId(id);
+           return _repository.BuscarPorId(id);
         }
         public void Editar(Funcionario editFuncionario)
         {
-            repository.Editar(editFuncionario);
+            _repository.Editar(editFuncionario);
         }
 
     }

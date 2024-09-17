@@ -11,32 +11,32 @@ namespace Marcenaria01._01_Services
 {
     public class ClienteService
     {
-        public ClienteRepository repository { get; set; }
+        public ClienteRepository _repository { get; set; }
         public ClienteService(string _config)
         {
-            repository = new ClienteRepository(_config);
+            _repository = new ClienteRepository(_config);
         }
         public void Adicionar(Cliente clientes)
         {
-            repository.Adicionar(clientes);
+            _repository.Adicionar(clientes);
         }
 
         public void Remover(int id)
         {
-            repository.Remover(id);
+            _repository.Remover(id);
         }
 
         public List<Cliente> Listar()
         {
-            return repository.Listar();
+            return _repository.Listar();
         }
-        public void BuscarTimePorId(int id)
+        public Cliente BuscarTimePorId(int id)
         {
-            //return repository.BuscarPorId(id);
+           return _repository.BuscarPorId(id);
         }
         public void Editar(Cliente editClientes)
         {
-            repository.Editar(editClientes);
+            _repository.Editar(editClientes);
         }
        
     }

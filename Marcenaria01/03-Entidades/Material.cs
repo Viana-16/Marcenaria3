@@ -13,6 +13,6 @@ namespace Marcenaria01._03_Entidades
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
-        public int FornecedorId { get; set; }
+        //public int FornecedorId { get; set; }
     }
 }

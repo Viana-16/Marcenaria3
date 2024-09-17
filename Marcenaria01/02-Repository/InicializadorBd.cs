@@ -67,6 +67,16 @@ namespace Marcenaria._02_Repository
                 
           
             );";
+                commandoSQL += @" 
+                CREATE TABLE IF NOT EXISTS Materiais(                
+                ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                NOME TEXT NOT NULL,
+                DESCRICAO TEXT NOT NULL
+                
+                
+          
+            );";
+
 
                 connection.Execute(commandoSQL);
 

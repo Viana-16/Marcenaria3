@@ -12,32 +12,32 @@ namespace Marcenaria._01_Services
 {
     public class CompraService
     {
-        public CompraRepository repository { get; set; }
+        public CompraRepository _repository { get; set; }
         public CompraService(string _config)
         {
-            repository = new CompraRepository(_config);
+            _repository = new CompraRepository(_config);
         }
         public void Adicionar(Compra compra)
         {
-            repository.Adicionar(compra);
+            _repository.Adicionar(compra);
         }
 
         public void Remover(int id)
         {
-            repository.Remover(id);
+            _repository.Remover(id);
         }
 
         public List<Compra> Listar()
         {
-            return repository.Listar();
+            return _repository.Listar();
         }
-        public void BuscarPorId(int id)
+        public Compra BuscarPorId(int id)
         {
-            //return repository.BuscarPorId(id);
+            return _repository.BuscarPorId(id);
         }
         public void Editar(Compra editCompra)
         {
-            repository.Editar(editCompra);
+            _repository.Editar(editCompra);
         }
 
     }

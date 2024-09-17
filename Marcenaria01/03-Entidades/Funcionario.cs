@@ -14,6 +14,6 @@ namespace Marcenaria01._03_Entidades
         public string Nome { get; set; }
         public string Cargo { get; set; }
         public int Contato { get; set; }
-        public int DataContratacao { get; set; }
+        public int DataContratacao { get; set; } 
     }
 }

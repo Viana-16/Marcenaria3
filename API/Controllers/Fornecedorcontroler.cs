@@ -15,39 +15,39 @@ namespace API.Controllers
     [Route("[controller]")]
     public class Fornecedorcontroller : ControllerBase
     {
-        private readonly FornecedorRepository _repository;
+        private readonly FornecedorService _service;
         private readonly IMapper _mapper;
         public Fornecedorcontroller(IConfiguration config, IMapper mapper)
         {
             string _config = config.GetConnectionString("DefaultConnection");
-            _repository = new FornecedorRepository(_config);
+            _service = new FornecedorService(_config);
             _mapper = mapper;
         }
         [HttpPost("adicionar-Fornecedor")]
         public void Adicionar(CreateFornecedorDTO fornecedorDTO)
         {
             Fornecedor fornecedor = _mapper.Map<Fornecedor>(fornecedorDTO);
-            _repository.Adicionar(fornecedor);
+            _service.Adicionar(fornecedor);
         }
         [HttpGet("listar-Fornecedor")]
         public List<Fornecedor> Listar()
         {
-            return _repository.Listar();
+            return _service.Listar();
         }
         [HttpPut("editar-Fornecedor")]
         public void Editar(Fornecedor f)
         {
-            _repository.Editar(f);
+            _service.Editar(f);
         }
         [HttpDelete("deletar-Fornecedor")]
         public void Deletar(int id)
         {
-            _repository.Remover(id);
+            _service.Remover(id);
         }
         [HttpGet("Buscar-Fornecedor-por-Id")]
         public Fornecedor BuscarPorId(int id)
         {
-            return _repository.BuscarPorId(id);
+            return _service.BuscarPorId(id);
         }
     }
     

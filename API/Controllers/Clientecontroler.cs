@@ -14,39 +14,39 @@ namespace API.Controllers
     [Route("[controller]")]
     public class Clientecontroller : ControllerBase
     {
-        private readonly ClienteRepository _repository;
+        private readonly ClienteService _service;
         private readonly IMapper _mapper;
         public Clientecontroller(IConfiguration config, IMapper mapper)
         {
             string _config = config.GetConnectionString("DefaultConnection");
-            _repository = new ClienteRepository(_config);
+            _service = new ClienteService(_config);
             _mapper = mapper;
         }
         [HttpPost("adicionar-Clientes")]
         public void Adicionar(CreateClienteDTO clienteDTO)
         {
             Cliente clientes = _mapper.Map<Cliente>(clienteDTO);
-            _repository.Adicionar(clientes);
+            _service.Adicionar(clientes);
         }
         [HttpGet("listar-Clientes")]
         public List<Cliente> Listar()
         {
-            return _repository.Listar();
+            return _service.Listar();
         }
         [HttpPut("editar-Clientes")]
         public void Editar(Cliente c)
         {
-            _repository.Editar(c);
+            _service.Editar(c);
         }
         [HttpDelete("deletar-Clientes")]
         public void Deletar(int id)
         {
-            _repository.Remover(id);
+            _service.Remover(id);
         }
         [HttpGet("Buscar-Cliente-por-Id")]
         public Cliente BuscarPorId(int id)
         {
-            return _repository.BuscarPorId(id);
+            return _service.BuscarPorId(id);
         }
     }
 }
