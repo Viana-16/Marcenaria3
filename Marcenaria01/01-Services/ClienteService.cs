@@ -30,7 +30,7 @@ namespace Marcenaria01._01_Services
         {
             return _repository.Listar();
         }
-        public Cliente BuscarTimePorId(int id)
+        public Cliente BuscarPorId(int id)
         {
            return _repository.BuscarPorId(id);
         }
