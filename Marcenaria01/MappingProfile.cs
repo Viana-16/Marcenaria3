@@ -3,6 +3,7 @@ using AutoMapper;
 using Marcenaria._03_Entidades;
 using Marcenaria01._03_Entidades;
 using Marcenaria01._03_Entidades.DTO.Produto;
+using Marcenaria01._03_Entidades.DTO.Venda;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace Marcenaria01
             CreateMap<CreateCompraDTO, Compra>().ReverseMap();
             CreateMap<CreateFuncionarioDTO, Funcionario>().ReverseMap();
             CreateMap<CreateMaterialDTO, Material>().ReverseMap();
+            CreateMap<CreateVendaDTO, Venda>().ReverseMap();
         }
     }
 }

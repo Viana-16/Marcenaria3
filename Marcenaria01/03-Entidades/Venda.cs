@@ -15,7 +15,6 @@ namespace Marcenaria01._03_Entidades
     {
         public int Id { get; set; }
         public int DataVenda { get; set; } 
-        public int ClienteId { get; set; }
         public string ItensVendidos { get; set; }
         public int TotalVendas { get; set; }
     }

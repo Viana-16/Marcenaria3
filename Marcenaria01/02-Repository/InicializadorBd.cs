@@ -41,8 +41,8 @@ namespace Marcenaria._02_Repository
 
                 commandoSQL += @" 
                 CREATE TABLE IF NOT EXISTS Clientes(                
-                ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                NOME TEXT NOT NULL,
+                ID INTEGER PRIMARY KEY AUTOINCREMENT, 
+                NOME TEXT NOT NULL, 
                 CONTATO INTEGER NOT NULL,
                 ENDERECO TEXT NOT NULL
                 
@@ -72,6 +72,16 @@ namespace Marcenaria._02_Repository
                 ID INTEGER PRIMARY KEY AUTOINCREMENT,
                 NOME TEXT NOT NULL,
                 DESCRICAO TEXT NOT NULL
+                
+                
+          
+            );";
+                commandoSQL += @" 
+                CREATE TABLE IF NOT EXISTS Vendas(                
+                ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                DATAVENDA INTEGER NOT NULL,
+                ITENSVENDIDOS TEXT NOT NULL,
+                TOTALVENDAS INTEGER NOT NULL
                 
                 
           
